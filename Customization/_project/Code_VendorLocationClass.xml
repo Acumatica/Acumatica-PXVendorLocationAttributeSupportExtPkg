@@ -1,0 +1,91 @@
+﻿<Graph ClassName="VendorLocationClass" Source="#CDATA" IsNew="True" FileType="NewFile">
+    <CDATA name="Source"><![CDATA[using PX.Data;
+using System;
+
+namespace PXVendorLocationAttributeSupportExtPkg
+{
+    [PXCacheName("Vendor Location Class")]
+    [Serializable]
+    [PXPrimaryGraph(typeof(VendorLocationClassMaint))]
+    public class VendorLocationClass : IBqlTable
+    {
+        #region VendorLocationClassID
+
+        public abstract class vendorLocationClassID : IBqlField { }
+
+        [PXDBString(10, IsUnicode = true, IsKey = true)]
+        [PXDefault(PersistingCheck = PXPersistingCheck.NullOrBlank)]
+        [PXUIField(DisplayName = "Class ID", Visibility = PXUIVisibility.SelectorVisible)]
+        [PXSelector(typeof(Search<VendorLocationClass.vendorLocationClassID>), CacheGlobal = true)]
+        public virtual String VendorLocationClassID { get; set; }
+
+        #endregion
+
+        #region Descr
+
+        public abstract class descr : IBqlField { }
+
+        [PXDBString(60, IsUnicode = true)]
+        [PXUIField(DisplayName = "Description", Visibility = PXUIVisibility.SelectorVisible)]
+        public virtual String Descr { get; set; }
+
+        #endregion
+
+        #region CreatedByID
+        public abstract class createdByID : IBqlField { }
+
+        [PXDBCreatedByID()]
+        public virtual Guid? CreatedByID { get; set; }
+        #endregion
+
+        #region CreatedByScreenID
+        public abstract class createdByScreenID : IBqlField { }
+
+        [PXDBCreatedByScreenID()]
+        public virtual string CreatedByScreenID { get; set; }
+        #endregion
+
+        #region CreatedDateTime
+        public abstract class createdDateTime : IBqlField { }
+
+        [PXDBCreatedDateTime()]
+        public virtual DateTime? CreatedDateTime { get; set; }
+        #endregion
+
+        #region LastModifiedByID
+        public abstract class lastModifiedByID : IBqlField { }
+
+        [PXDBLastModifiedByID()]
+        public virtual Guid? LastModifiedByID { get; set; }
+        #endregion
+
+        #region LastModifiedByScreenID
+        public abstract class lastModifiedByScreenID : IBqlField { }
+
+        [PXDBLastModifiedByScreenID()]
+        public virtual string LastModifiedByScreenID { get; set; }
+        #endregion
+
+        #region LastModifiedDateTime
+        public abstract class lastModifiedDateTime : IBqlField { }
+
+        [PXDBLastModifiedDateTime()]
+        public virtual DateTime? LastModifiedDateTime { get; set; }
+        #endregion
+
+        #region tstamp
+        public abstract class Tstamp : IBqlField { }
+
+        [PXDBTimestamp]
+        public virtual byte[] tstamp { get; set; }
+        #endregion
+
+        #region NoteID
+        public abstract class noteID : IBqlField { }
+
+        [PXNote()]
+        public virtual Guid? NoteID { get; set; }
+        #endregion
+    }
+}]]></CDATA>
+</Graph>

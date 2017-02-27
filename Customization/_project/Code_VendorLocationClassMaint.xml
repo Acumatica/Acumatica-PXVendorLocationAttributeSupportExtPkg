@@ -1,0 +1,17 @@
+﻿<Graph ClassName="VendorLocationClassMaint" Source="#CDATA" IsNew="True" FileType="NewFile">
+    <CDATA name="Source"><![CDATA[using System;
+using PX.Data;
+using PX.Objects.AP;
+using PX.Objects.CR;
+
+namespace PXVendorLocationAttributeSupportExtPkg
+{
+    public class VendorLocationClassMaint : PXGraph<VendorLocationClassMaint, VendorLocationClass>
+    {
+        public PXSelect<VendorLocationClass> VendorLocationClasses;
+
+        [PXViewName(PX.Objects.CR.Messages.Attributes)]
+        public CSAttributeGroupList<VendorLocationClass, LocationPXExt> Mapping;
+    }
+}]]></CDATA>
+</Graph>

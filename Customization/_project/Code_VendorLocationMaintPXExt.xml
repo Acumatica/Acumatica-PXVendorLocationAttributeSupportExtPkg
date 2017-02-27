@@ -1,0 +1,14 @@
+﻿<Graph ClassName="VendorLocationMaintPXExt" Source="#CDATA" IsNew="True" FileType="NewFile">
+    <CDATA name="Source"><![CDATA[using System;
+using PX.Data;
+using PX.Objects.AP;
+using PX.Objects.CR;
+
+namespace PXVendorLocationAttributeSupportExtPkg
+{
+    public class VendorLocationMaintPXExt : PXGraphExtension<VendorLocationMaint>
+    {
+        public CRAttributeList<Location> Answers;
+    }
+}]]></CDATA>
+</Graph>

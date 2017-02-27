@@ -1,0 +1,32 @@
+﻿<Graph ClassName="LocationPXExt" Source="#CDATA" IsNew="True" FileType="NewFile">
+    <CDATA name="Source"><![CDATA[using System;
+using PX.Data;
+using PX.Objects.CR;
+
+namespace PXVendorLocationAttributeSupportExtPkg
+{
+    public class LocationPXExt : PXCacheExtension<Location>
+    {
+        #region UsrVendorLocationClassID
+
+        public abstract class usrVendorLocationClassID : IBqlField { }
+
+        [PXDBString(10, IsUnicode = true)]
+        [PXUIField(DisplayName = "Class ID", Visibility = PXUIVisibility.SelectorVisible)]
+        [PXDefault]
+        [PXSelector(typeof(Search<VendorLocationClass.vendorLocationClassID>), CacheGlobal = true)]
+        public virtual String UsrVendorLocationClassID { get; set; }
+
+        #endregion
+
+        #region UsrAttributes
+
+        public abstract class usrAttributes : IBqlField { }
+
+        [CRAttributesField(typeof(LocationPXExt.usrVendorLocationClassID), typeof(Location.noteID), BqlTable = typeof(Location))]
+        public virtual string[] UsrAttributes { get; set; }
+
+        #endregion
+    }
+}]]></CDATA>
+</Graph>
