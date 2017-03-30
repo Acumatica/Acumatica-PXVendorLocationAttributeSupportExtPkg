@@ -4,7 +4,7 @@ Adding Attribute Support to out-of-box Vendor Location Entity
 ==================================
 An extension that allows to add attribute support to out-of-box Vendor Location Entity.
 
-###Prerequisites
+### Prerequisites
 * Acumatica 6.0 or higher
 
 Quick Start
